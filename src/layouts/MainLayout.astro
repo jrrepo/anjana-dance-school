@@ -1,0 +1,76 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = 'Anjana Dance School' } = Astro.props;
+---
+
+<Layout title={title}>
+	<div class="min-h-screen flex flex-col bg-[var(--color-background)]">
+		<!-- Navbar -->
+		<nav class="bg-[var(--color-primary)] text-white py-4 px-6 shadow-lg">
+			<div class="max-w-7xl mx-auto flex justify-between items-center">
+				<h1 class="font-cinzel text-2xl font-bold">Anjana Dance School</h1>
+				<ul class="flex gap-6">
+					<li><a href="/" class="hover:text-[var(--color-accent)] transition">Home</a></li>
+					<li><a href="#about" class="hover:text-[var(--color-accent)] transition">About</a></li>
+					<li><a href="#classes" class="hover:text-[var(--color-accent)] transition">Classes</a></li>
+					<li><a href="#contact" class="hover:text-[var(--color-accent)] transition">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- Main Content -->
+		<main class="flex-1">
+			<slot />
+		</main>
+
+		<!-- Footer -->
+		<footer class="bg-[var(--color-primary)] text-white py-8 px-6 mt-12">
+			<div class="max-w-7xl mx-auto">
+				<div class="grid grid-cols-3 gap-8 mb-6">
+					<div>
+						<h3 class="font-cinzel font-bold text-lg mb-3">About Us</h3>
+						<p class="text-sm text-gray-300">Anjana Dance School - Celebrating movement, culture, and expression through dance.</p>
+					</div>
+					<div>
+						<h3 class="font-cinzel font-bold text-lg mb-3">Quick Links</h3>
+						<ul class="text-sm space-y-2">
+							<li><a href="/" class="hover:text-[var(--color-accent)] transition">Home</a></li>
+							<li><a href="#classes" class="hover:text-[var(--color-accent)] transition">Classes</a></li>
+							<li><a href="#contact" class="hover:text-[var(--color-accent)] transition">Contact</a></li>
+						</ul>
+					</div>
+					<div>
+						<h3 class="font-cinzel font-bold text-lg mb-3">Contact</h3>
+						<p class="text-sm text-gray-300">Email: info@anjanadance.com</p>
+						<p class="text-sm text-gray-300">Phone: (555) 123-4567</p>
+					</div>
+				</div>
+				<hr class="border-[var(--color-secondary)] mb-4" />
+				<p class="text-center text-sm text-gray-400">&copy; 2024 Anjana Dance School. All rights reserved.</p>
+			</div>
+		</footer>
+	</div>
+</Layout>
+
+<style is:global>
+	/* Typography */
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Cinzel', serif;
+		font-weight: 600;
+	}
+
+	body {
+		font-family: 'Poppins', sans-serif;
+	}
+
+	/* Utility Classes */
+	.font-cinzel {
+		font-family: 'Cinzel', serif;
+	}
+</style>
