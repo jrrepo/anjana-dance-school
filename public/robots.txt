@@ -1,5 +1,5 @@
-# TODO: Update the sitemap URL if the final production domain changes.
+# Update this URL when ADS moves to a custom domain.
 User-agent: *
 Allow: /
 
-Sitemap: https://www.anjanadanceschool.com/sitemap-index.xml
+Sitemap: https://anjanadance.pages.dev/sitemap-index.xml

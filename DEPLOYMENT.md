@@ -124,15 +124,15 @@ After the first successful deployment:
 3. Confirm DNS records are active.
 4. Confirm HTTPS opens without certificate warnings.
 5. Confirm HTTP redirects to HTTPS.
-6. Update `astro.config.mjs` and `public/robots.txt` if the final domain differs from `https://www.anjanadanceschool.com`.
+6. Update `astro.config.mjs` and `public/robots.txt` when moving from the free Pages domain to a custom domain.
 7. Rebuild and redeploy after a domain change.
 
 ## Search Launch
 
 After the custom domain is live:
 
-1. Open `https://www.anjanadanceschool.com/sitemap-index.xml`.
-2. Verify `https://www.anjanadanceschool.com/robots.txt`.
+1. Open `https://anjanadance.pages.dev/sitemap-index.xml`.
+2. Verify `https://anjanadance.pages.dev/robots.txt`.
 3. Add the domain to Google Search Console.
 4. Submit `/sitemap-index.xml`.
 5. Test the homepage URL with Google URL Inspection.

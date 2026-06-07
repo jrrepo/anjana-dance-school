@@ -20,7 +20,7 @@ const {
 	type = 'website',
 } = Astro.props;
 
-const siteUrl = Astro.site ?? new URL('https://www.anjanadanceschool.com');
+const siteUrl = Astro.site ?? new URL('https://anjanadance.pages.dev');
 const canonicalUrl = canonical
 	? new URL(canonical, siteUrl)
 	: new URL(Astro.url.pathname, siteUrl);

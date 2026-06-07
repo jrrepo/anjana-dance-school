@@ -8,8 +8,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO: Replace this URL if the final production domain changes.
-  site: 'https://www.anjanadanceschool.com',
+  // Update this when ADS moves from the free Pages domain to a custom domain.
+  site: 'https://anjanadance.pages.dev',
 
   integrations: [react(), sitemap()],
 

@@ -144,7 +144,7 @@ Each page passes:
 The default production site URL is configured in `astro.config.mjs`:
 
 ```js
-site: 'https://www.anjanadanceschool.com'
+site: 'https://anjanadance.pages.dev'
 ```
 
 Update this if the final domain changes. `public/robots.txt` also references this domain.

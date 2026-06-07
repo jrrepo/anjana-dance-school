@@ -15,7 +15,7 @@ This file tracks current placeholders and explains how to update content safely.
 Current placeholder/final-intended domain:
 
 ```text
-https://www.anjanadanceschool.com
+https://anjanadance.pages.dev
 ```
 
 Update domain in:
