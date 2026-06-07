@@ -1,0 +1,35 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageBanner from '../components/common/PageBanner';
+
+const pageTitle = 'Contact Anjana Dance School | Central Florida Dance Classes';
+const pageDescription =
+	'Contact Anjana Dance School for class inquiries, trial classes, schedules, and dance training information in Central Florida.';
+---
+
+<MainLayout title={pageTitle} description={pageDescription} canonical="/contact/">
+	<PageBanner eyebrow="Contact" title="Start your dance journey." description="Reach out to learn about class options, schedules, and the right path for your dancer." />
+	<section class="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-6 py-18 sm:py-24 lg:grid-cols-2">
+		<div class="rounded-lg border border-[#fff1d6]/14 bg-white/[0.055] p-7">
+			<h2 class="font-['Cinzel'] text-3xl font-bold text-[#f6b64a]">Central Florida</h2>
+			<p class="mt-4 leading-7 text-[#d8cae8]">Ask about freestyle dance classes, cinematic dance classes, kids dance classes, trial classes, and competition preparation in Central Florida.</p>
+			<p class="mt-4 leading-7 text-[#d8cae8]">Email: info@anjanadance.com</p>
+		</div>
+		<form class="grid gap-4 rounded-lg border border-[#fff1d6]/14 bg-white/[0.055] p-7" action="mailto:info@anjanadance.com" method="post" enctype="text/plain" aria-label="Dance class inquiry form">
+			<div class="grid gap-2">
+				<label class="text-sm font-semibold text-[#fff8ea]" for="contact-name">Name</label>
+				<input id="contact-name" name="Name" class="rounded-lg border border-[#fff1d6]/14 bg-[#070b21]/70 px-4 py-3 text-[#fff8ea] outline-none focus:border-[#f6b64a]" autocomplete="name" required />
+			</div>
+			<div class="grid gap-2">
+				<label class="text-sm font-semibold text-[#fff8ea]" for="contact-email">Email</label>
+				<input id="contact-email" name="Email" type="email" class="rounded-lg border border-[#fff1d6]/14 bg-[#070b21]/70 px-4 py-3 text-[#fff8ea] outline-none focus:border-[#f6b64a]" autocomplete="email" required />
+			</div>
+			<div class="grid gap-2">
+				<label class="text-sm font-semibold text-[#fff8ea]" for="contact-message">How can we help?</label>
+				<textarea id="contact-message" name="Message" class="min-h-32 rounded-lg border border-[#fff1d6]/14 bg-[#070b21]/70 px-4 py-3 text-[#fff8ea] outline-none focus:border-[#f6b64a]" required></textarea>
+			</div>
+			<p class="text-xs leading-5 text-[#d8cae8]/80">Submitting opens your email app with this inquiry addressed to ADS.</p>
+			<button class="rounded-lg bg-gradient-to-r from-[#f6b64a] to-[#e93675] px-5 py-3 font-extrabold text-[#18061f]" type="submit">Send Inquiry</button>
+		</form>
+	</section>
+</MainLayout>

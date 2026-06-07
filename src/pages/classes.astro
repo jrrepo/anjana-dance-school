@@ -1,0 +1,21 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageBanner from '../components/common/PageBanner';
+
+const classes = ['Freestyle Dance', 'Cinematic Dance', 'Kids Performance Training', 'Competition Preparation'];
+const pageTitle = 'Dance Classes | Anjana Dance School';
+const pageDescription =
+	'Explore freestyle, cinematic dance, kids performance training, and competition preparation classes at Anjana Dance School in Central Florida.';
+---
+
+<MainLayout title={pageTitle} description={pageDescription} canonical="/classes/">
+	<PageBanner eyebrow="Classes" title="Dance training with cinematic energy." description="Choose a path that builds technique, confidence, rhythm, and expressive performance." />
+	<section class="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-5 py-18 sm:grid-cols-2 sm:py-24">
+		{classes.map((className) => (
+			<article class="rounded-lg border border-[#fff1d6]/14 bg-[linear-gradient(145deg,rgba(255,255,255,0.09),rgba(255,255,255,0.025))] p-7 shadow-[0_18px_48px_rgba(0,0,0,0.22)]">
+				<h2 class="font-['Cinzel'] text-3xl font-bold text-[#fff8ea]">{className}</h2>
+				<p class="mt-4 leading-7 text-[#d8cae8]">Parent-friendly dance classes in Central Florida with movement foundations, choreography, expression, and stage confidence for kids and adults.</p>
+			</article>
+		))}
+	</section>
+</MainLayout>

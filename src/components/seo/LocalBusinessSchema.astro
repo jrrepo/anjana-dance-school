@@ -1,0 +1,26 @@
+---
+interface Props {
+	url: string;
+}
+
+const { url } = Astro.props;
+
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'LocalBusiness',
+	name: 'Anjana Dance School',
+	description: 'Freestyle and cinematic dance classes for kids and adults in Central Florida.',
+	url,
+	areaServed: {
+		'@type': 'AdministrativeArea',
+		name: 'Central Florida',
+	},
+	slogan: 'Express yourself through the art of dance',
+	sameAs: [
+		'https://www.instagram.com/',
+		'https://www.youtube.com/',
+	],
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

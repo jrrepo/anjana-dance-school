@@ -1,0 +1,5 @@
+# TODO: Update the sitemap URL if the final production domain changes.
+User-agent: *
+Allow: /
+
+Sitemap: https://www.anjanadanceschool.com/sitemap-index.xml

@@ -1,0 +1,70 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageBanner from '../components/common/PageBanner';
+import YouTubeEmbed from '../components/media/YouTubeEmbed';
+import InstagramCTA from '../components/social/InstagramCTA';
+import InstagramGrid from '../components/social/InstagramGrid';
+import { videoCategories, videos } from '../data/videos';
+
+const pageTitle = 'Performances & Gallery | Anjana Dance School';
+const pageDescription =
+	'Watch student performances, competition highlights, practice sessions, and special moments from Anjana Dance School.';
+const populatedCategories = videoCategories.filter((category) => videos.some((video) => video.category === category));
+---
+
+<MainLayout title={pageTitle} description={pageDescription} canonical="/gallery/">
+	<PageBanner
+		eyebrow="Gallery"
+		title="Performances with cinematic energy."
+		description="Watch ADS dancers bring expression, confidence, and choreography to life through stage performances, competitions, practice sessions, and student highlights."
+	/>
+
+	<section class="relative overflow-hidden py-18 sm:py-24">
+		<div class="absolute inset-x-0 top-0 -z-10 h-96 bg-[radial-gradient(ellipse_at_center,rgba(233,54,117,0.16),transparent_64%)]"></div>
+		<div class="mx-auto w-[min(1180px,calc(100%-32px))]">
+			<div class="grid gap-5 lg:grid-cols-[0.85fr_1fr] lg:items-end">
+				<div>
+					<p class="text-xs font-extrabold uppercase tracking-[0.18em] text-[#f6b64a]">Performance Library</p>
+					<h2 class="mt-4 font-['Cinzel'] text-4xl font-bold leading-tight text-[#fff8ea] sm:text-5xl">A growing archive of ADS movement.</h2>
+				</div>
+				<p class="text-base leading-8 text-[#d8cae8]">
+					Explore student performances from our Central Florida dance community, including stage events, competition preparation, and practice sessions.
+				</p>
+			</div>
+
+			<div class="mt-12 grid gap-14">
+				{populatedCategories.map((category) => {
+					const categoryVideos = videos.filter((video) => video.category === category);
+
+					return (
+						<section aria-labelledby={`category-${category.toLowerCase().replaceAll(' ', '-')}`}>
+							<div class="mb-6 flex flex-col gap-3 border-b border-[#fff1d6]/12 pb-5 sm:flex-row sm:items-end sm:justify-between">
+								<div>
+									<p class="text-xs font-extrabold uppercase tracking-[0.16em] text-[#e93675]">Category</p>
+									<h3 id={`category-${category.toLowerCase().replaceAll(' ', '-')}`} class="mt-2 font-['Cinzel'] text-3xl font-bold text-[#fff8ea]">
+										{category}
+									</h3>
+								</div>
+								<span class="text-sm font-semibold text-[#f6b64a]">{categoryVideos.length} videos</span>
+							</div>
+
+							<div class="grid gap-6 lg:grid-cols-2">
+								{categoryVideos.map((video) => (
+									<article class="rounded-lg border border-[#fff1d6]/12 bg-white/[0.04] p-3 shadow-[0_20px_60px_rgba(0,0,0,0.22)]">
+										<YouTubeEmbed videoId={video.videoId} title={video.title} />
+										<div class="px-2 pb-2 pt-4">
+											<h4 class="font-['Cinzel'] text-xl font-bold text-[#fff8ea]">{video.title}</h4>
+											<p class="mt-2 text-sm font-semibold text-[#f6b64a]">{video.category}</p>
+										</div>
+									</article>
+								))}
+							</div>
+						</section>
+					);
+				})}
+			</div>
+		</div>
+	</section>
+	<InstagramCTA />
+	<InstagramGrid />
+</MainLayout>

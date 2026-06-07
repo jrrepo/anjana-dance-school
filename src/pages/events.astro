@@ -1,0 +1,18 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageBanner from '../components/common/PageBanner';
+
+const pageTitle = 'Dance Events & Performances | Anjana Dance School';
+const pageDescription =
+	'Discover upcoming student performances, showcases, competitions, and dance events from Anjana Dance School in Central Florida.';
+---
+
+<MainLayout title={pageTitle} description={pageDescription} canonical="/events/">
+	<PageBanner eyebrow="Events" title="Performances, showcases, and celebrations." description="Upcoming events will be shared here as the ADS performance calendar grows." />
+	<section class="mx-auto w-[min(900px,calc(100%-32px))] py-18 sm:py-24">
+		<div class="rounded-lg border border-[#fff1d6]/14 bg-white/[0.055] p-7 text-center shadow-[0_20px_60px_rgba(0,0,0,0.24)]">
+			<h2 class="font-['Cinzel'] text-3xl font-bold text-[#fff8ea]">Events calendar coming soon</h2>
+			<p class="mt-4 leading-7 text-[#d8cae8]">Check back for performance dates, student showcases, and community events.</p>
+		</div>
+	</section>
+</MainLayout>

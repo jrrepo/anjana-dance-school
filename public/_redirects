@@ -1,0 +1,2 @@
+# Astro generates real static routes for every page in this project.
+# No SPA fallback is needed. Add explicit redirects below only when a URL changes.

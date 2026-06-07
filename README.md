@@ -1,43 +1,191 @@
-# Astro Starter Kit: Minimal
+# Anjana Dance School Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Production-quality Astro website for Anjana Dance School (ADS), a Central Florida dance school focused on freestyle and cinematic dance classes for kids and adults.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Tagline: `Express yourself through the art of dance`
 
-## 🚀 Project Structure
+## Tech Stack
 
-Inside of your Astro project, you'll see the following folders and files:
+- Astro
+- React
+- TypeScript
+- Tailwind CSS
+- Astro Sitemap
+- Static site output for Cloudflare Pages
+- Node.js 24 LTS
+
+## Current Features
+
+- Cinematic, performance-focused homepage
+- Responsive navigation and mobile menu
+- Reusable Astro layout with SEO metadata support
+- Local business JSON-LD structured data
+- Sitemap and robots.txt support
+- Branded favicon and social preview image
+- YouTube performance embeds using static video data
+- Instagram-style social preview cards using static image data
+- Placeholder pages for About, Classes, Gallery, Events, and Contact
+
+## Project Structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+  assets/
+    gallery/        Performance and student photos
+    hero/           Homepage and banner hero imagery
+    icons/          Brand/icon reference assets
+    logo/           ADS logos, transparent logos, favicon source assets
+    references/     Brand concept, social, YouTube, business card references
+    social/         Reserved for future Instagram/social-specific images
+  components/
+    common/         Navbar, Footer, shared page banner
+    home/           Homepage sections and hero
+    media/          YouTube embed component
+    seo/            LocalBusiness schema
+    social/         Instagram CTA and grid components
+  data/
+    videos.ts       YouTube video data
+    instagram.ts    Instagram/social card data
+  layouts/
+    MainLayout.astro
+  pages/
+    index.astro
+    about.astro
+    classes.astro
+    gallery.astro
+    events.astro
+    contact.astro
+  styles/
+    global.css
+
+public/
+  favicon.png
+  favicon-192.png
+  favicon-512.png
+  favicon.ico
+  og-image.png
+  robots.txt
+  _headers
+  _redirects
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Important Files
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Main site shell and SEO: `src/layouts/MainLayout.astro`
+- Navigation: `src/components/common/Navbar.tsx`
+- Footer/social links: `src/components/common/Footer.tsx`
+- Homepage hero: `src/components/home/Hero.tsx`
+- Homepage content sections: `src/components/home/HomeSections.tsx`
+- Homepage YouTube section: `src/components/home/FeaturedPerformances.tsx`
+- YouTube embed: `src/components/media/YouTubeEmbed.tsx`
+- Instagram CTA/grid: `src/components/social/InstagramCTA.tsx`, `src/components/social/InstagramGrid.tsx`
+- YouTube data: `src/data/videos.ts`
+- Instagram data: `src/data/instagram.ts`
+- Local business schema: `src/components/seo/LocalBusinessSchema.astro`
+- Astro config and sitemap site URL: `astro.config.mjs`
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Commands
 
-## 🧞 Commands
+Install dependencies:
 
-All commands are run from the root of the project, from a terminal:
+```sh
+npm install
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Run local development server:
 
-## 👀 Want to learn more?
+```sh
+npm run dev
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Build production output:
+
+```sh
+npm run build
+```
+
+Run Astro and TypeScript validation:
+
+```sh
+npm run check
+```
+
+Preview the production build locally:
+
+```sh
+npm run preview
+```
+
+## Cloudflare Pages
+
+Recommended Cloudflare Pages settings:
+
+- Framework preset: Astro
+- Build command: `npm run build`
+- Output directory: `dist`
+- Root directory: `/`
+- Node version: `24` LTS
+- Environment variables: none required for V1
+
+The site is configured as a static build and should deploy cleanly to Cloudflare Pages.
+
+Full deployment instructions are in `DEPLOYMENT.md`. Launch validation is tracked in `PRODUCTION_CHECKLIST.md`.
+
+## SEO
+
+SEO is handled by `src/layouts/MainLayout.astro`.
+
+Each page passes:
+
+- `title`
+- `description`
+- `canonical`
+
+The default production site URL is configured in `astro.config.mjs`:
+
+```js
+site: 'https://www.anjanadanceschool.com'
+```
+
+Update this if the final domain changes. `public/robots.txt` also references this domain.
+
+## Social Sharing
+
+Social sharing image:
+
+```text
+public/og-image.png
+```
+
+This image is used for OpenGraph and Twitter card previews, including WhatsApp/Facebook-style previews.
+
+## Content Model
+
+YouTube videos are managed in:
+
+```text
+src/data/videos.ts
+```
+
+Instagram/social cards are managed in:
+
+```text
+src/data/instagram.ts
+```
+
+This keeps media updates out of layout/component code.
+
+## Notes
+
+- The Instagram implementation intentionally does not use the Instagram API, Meta developer setup, or access tokens.
+- The YouTube implementation uses static video IDs and `youtube-nocookie.com` embeds.
+- Do not add fake address or phone data to schema or contact sections. Only use confirmed business details.
+
+## Future Enhancements
+
+- Replace placeholder Instagram, YouTube, and Facebook profile URLs.
+- Add a Cloudflare Pages Function or Worker for server-side contact submissions.
+- Add confirmed class schedules, pricing, and enrollment details.
+- Add real event dates and registration links.
+- Add privacy-conscious analytics after launch requirements are confirmed.
+- Add Google Search Console after the custom domain is live.

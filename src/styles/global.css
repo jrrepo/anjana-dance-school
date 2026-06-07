@@ -1,15 +1,79 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #5B1E56;
-  --color-secondary: #E63964;
-  --color-accent: #F4A62A;
-  --color-background: #0D1B3D;
-  --color-surface: #FFF1D6;
+  --ads-navy: #070b21;
+  --ads-purple: #34104f;
+  --ads-pink: #e93675;
+  --ads-gold: #f6b64a;
+  --ads-cream: #fff8ea;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ads-navy);
 }
 
 body {
+  min-width: 320px;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(233, 54, 117, 0.2), transparent 28rem),
+    radial-gradient(circle at 78% 8%, rgba(246, 182, 74, 0.18), transparent 24rem),
+    linear-gradient(135deg, var(--ads-navy), #12072c 50%, #20104d);
+  color: var(--ads-cream);
   font-family: 'Poppins', sans-serif;
-  background: var(--color-background);
-  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.08), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.06)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 112px);
+  opacity: 0.45;
+}
+
+@keyframes ads-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ads-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.ads-fade-up {
+  animation: ads-fade-up 700ms ease both;
+}
+
+.ads-float {
+  animation: ads-float 6s ease-in-out infinite;
 }

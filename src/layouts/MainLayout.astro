@@ -1,76 +1,72 @@
 ---
-import Layout from './Layout.astro';
+import '../styles/global.css';
+import Navbar from '../components/common/Navbar';
+import Footer from '../components/common/Footer';
+import LocalBusinessSchema from '../components/seo/LocalBusinessSchema.astro';
 
 interface Props {
-	title: string;
+	title?: string;
 	description?: string;
+	image?: string;
+	canonical?: string;
+	type?: string;
 }
 
-const { title, description = 'Anjana Dance School' } = Astro.props;
+const {
+	title = 'Anjana Dance School | Freestyle & Cinematic Dance Classes in Central Florida',
+	description = 'Express yourself through the art of dance at Anjana Dance School. Freestyle and cinematic dance classes for kids and adults in Central Florida.',
+	image = '/og-image.png',
+	canonical,
+	type = 'website',
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://www.anjanadanceschool.com');
+const canonicalUrl = canonical
+	? new URL(canonical, siteUrl)
+	: new URL(Astro.url.pathname, siteUrl);
+const imageUrl = new URL(image, siteUrl);
 ---
 
-<Layout title={title}>
-	<div class="min-h-screen flex flex-col bg-[var(--color-background)]">
-		<!-- Navbar -->
-		<nav class="bg-[var(--color-primary)] text-white py-4 px-6 shadow-lg">
-			<div class="max-w-7xl mx-auto flex justify-between items-center">
-				<h1 class="font-cinzel text-2xl font-bold">Anjana Dance School</h1>
-				<ul class="flex gap-6">
-					<li><a href="/" class="hover:text-[var(--color-accent)] transition">Home</a></li>
-					<li><a href="#about" class="hover:text-[var(--color-accent)] transition">About</a></li>
-					<li><a href="#classes" class="hover:text-[var(--color-accent)] transition">Classes</a></li>
-					<li><a href="#contact" class="hover:text-[var(--color-accent)] transition">Contact</a></li>
-				</ul>
-			</div>
-		</nav>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+		<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+		<link rel="apple-touch-icon" sizes="512x512" href="/favicon-512.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#070b21" />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
+		<meta property="og:type" content={type} />
+		<meta property="og:site_name" content="Anjana Dance School" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={imageUrl} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Anjana Dance School dancers and brand artwork" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={imageUrl} />
+		<meta name="twitter:image:alt" content="Anjana Dance School dancers and brand artwork" />
+		<title>{title}</title>
+		<LocalBusinessSchema url={siteUrl.href} />
 
-		<!-- Main Content -->
-		<main class="flex-1">
-			<slot />
-		</main>
-
-		<!-- Footer -->
-		<footer class="bg-[var(--color-primary)] text-white py-8 px-6 mt-12">
-			<div class="max-w-7xl mx-auto">
-				<div class="grid grid-cols-3 gap-8 mb-6">
-					<div>
-						<h3 class="font-cinzel font-bold text-lg mb-3">About Us</h3>
-						<p class="text-sm text-gray-300">Anjana Dance School - Celebrating movement, culture, and expression through dance.</p>
-					</div>
-					<div>
-						<h3 class="font-cinzel font-bold text-lg mb-3">Quick Links</h3>
-						<ul class="text-sm space-y-2">
-							<li><a href="/" class="hover:text-[var(--color-accent)] transition">Home</a></li>
-							<li><a href="#classes" class="hover:text-[var(--color-accent)] transition">Classes</a></li>
-							<li><a href="#contact" class="hover:text-[var(--color-accent)] transition">Contact</a></li>
-						</ul>
-					</div>
-					<div>
-						<h3 class="font-cinzel font-bold text-lg mb-3">Contact</h3>
-						<p class="text-sm text-gray-300">Email: info@anjanadance.com</p>
-						<p class="text-sm text-gray-300">Phone: (555) 123-4567</p>
-					</div>
-				</div>
-				<hr class="border-[var(--color-secondary)] mb-4" />
-				<p class="text-center text-sm text-gray-400">&copy; 2024 Anjana Dance School. All rights reserved.</p>
-			</div>
-		</footer>
-	</div>
-</Layout>
-
-<style is:global>
-	/* Typography */
-	h1, h2, h3, h4, h5, h6 {
-		font-family: 'Cinzel', serif;
-		font-weight: 600;
-	}
-
-	body {
-		font-family: 'Poppins', sans-serif;
-	}
-
-	/* Utility Classes */
-	.font-cinzel {
-		font-family: 'Cinzel', serif;
-	}
-</style>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="min-h-screen overflow-hidden">
+			<Navbar client:load />
+			<main>
+				<slot />
+			</main>
+			<Footer />
+		</div>
+	</body>
+</html>

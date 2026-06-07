@@ -1,0 +1,26 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageBanner from '../components/common/PageBanner';
+
+const pageTitle = 'About Anjana Dance School | Central Florida';
+const pageDescription =
+	'Meet Anjana Dance School, a performance-focused Central Florida studio helping kids and adults build confidence through freestyle and cinematic dance.';
+---
+
+<MainLayout title={pageTitle} description={pageDescription} canonical="/about/">
+	<PageBanner eyebrow="About ADS" title="Where expression becomes performance." description="Anjana Dance School helps students build confidence, creativity, and stage presence through freestyle and cinematic dance training." />
+	<section class="mx-auto grid w-[min(1180px,calc(100%-32px))] gap-6 py-18 sm:py-24 lg:grid-cols-3">
+		<article class="rounded-lg border border-[#fff1d6]/14 bg-white/[0.055] p-6">
+			<h2 class="font-['Cinzel'] text-2xl font-bold text-[#f6b64a]">Creative</h2>
+			<p class="mt-4 leading-7 text-[#d8cae8]">Classes encourage musical interpretation, storytelling, and expressive movement.</p>
+		</article>
+		<article class="rounded-lg border border-[#fff1d6]/14 bg-white/[0.055] p-6">
+			<h2 class="font-['Cinzel'] text-2xl font-bold text-[#f6b64a]">Confident</h2>
+			<p class="mt-4 leading-7 text-[#d8cae8]">Students learn performance habits that help them feel prepared under the lights.</p>
+		</article>
+		<article class="rounded-lg border border-[#fff1d6]/14 bg-white/[0.055] p-6">
+			<h2 class="font-['Cinzel'] text-2xl font-bold text-[#f6b64a]">Energetic</h2>
+			<p class="mt-4 leading-7 text-[#d8cae8]">Every class is built to feel vibrant, focused, and welcoming for growing dancers.</p>
+		</article>
+	</section>
+</MainLayout>

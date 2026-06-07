@@ -1,17 +1,20 @@
 ---
+import MainLayout from '../layouts/MainLayout.astro';
+import Hero from '../components/home/Hero';
+import HomeSections from '../components/home/HomeSections';
+import FeaturedPerformances from '../components/home/FeaturedPerformances';
+import InstagramCTA from '../components/social/InstagramCTA';
+import InstagramGrid from '../components/social/InstagramGrid';
 
+const pageTitle = 'Anjana Dance School | Dance Classes in Central Florida';
+const pageDescription =
+	'Freestyle and cinematic dance classes for kids and adults in Central Florida. Join Anjana Dance School and express yourself through the art of dance.';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title={pageTitle} description={pageDescription} canonical="/">
+	<Hero />
+	<FeaturedPerformances />
+	<HomeSections />
+	<InstagramCTA />
+	<InstagramGrid />
+</MainLayout>
