@@ -29,7 +29,7 @@ export const instagramPosts: InstagramPost[] = [
   },
   {
     id: 'ads-kids-reel',
-    title: 'Kids 3 Moment',
+    title: 'Kids Moment',
     image: eventImage,
     type: 'reel',
     caption: 'A reel-ready highlight from our young dancers bringing color and joy to the stage.',

@@ -144,7 +144,7 @@ V1 uses a static `mailto:` form and requires a configured email application on t
 
 Before launch:
 
-- Confirm `info@anjanadance.com` is a valid ADS inbox.
+- Confirm `anjanadanceschool@gmail.com` is a valid ADS inbox.
 - Replace it in `src/pages/contact.astro` if necessary.
 - For server-side submissions later, add a Cloudflare Worker, Pages Function, or trusted form service.
 

@@ -140,13 +140,21 @@ YouTube data lives in:
 src/data/videos.ts
 ```
 
+Current channel:
+
+```ts
+export const youtubeHandle = '@AnjanaDanceSchool-v3q';
+export const youtubeChannelUrl = 'https://www.youtube.com/@AnjanaDanceSchool-v3q';
+```
+
 Example:
 
 ```ts
 {
-  title: 'ADS Kids 3 Event Performance 1',
+  title: 'ADS Kids Cinematic Event Highlight',
   videoId: 'S4plHTJbhr4',
   category: 'Stage Performances',
+  isHighlight: true,
 }
 ```
 
@@ -159,9 +167,11 @@ To add or replace a video:
    - `Competitions`
    - `Practice Sessions`
    - `Student Highlights`
-4. Run `npm run build`.
+4. Add `isHighlight: true` when the video should be prioritized on the homepage.
+5. Run `npm run build`.
 
 The first video in the array is the homepage featured performance.
+Highlighted videos are prioritized in the homepage side cards.
 
 ## Instagram Profile and Handle
 
@@ -231,7 +241,7 @@ src/components/common/Footer.tsx
 Current placeholders:
 
 - Instagram: `https://www.instagram.com/`
-- YouTube: `https://www.youtube.com/`
+- YouTube: `https://www.youtube.com/@AnjanaDanceSchool-v3q`
 - Facebook: `https://www.facebook.com/`
 
 Replace each with the real ADS profile or channel URL.
@@ -247,7 +257,7 @@ src/pages/contact.astro
 Current email placeholder:
 
 ```text
-info@anjanadance.com
+anjanadanceschool@gmail.com
 ```
 
 Replace it only with verified business information. Do not add an unconfirmed phone number or address.

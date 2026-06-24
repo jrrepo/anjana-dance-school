@@ -1,7 +1,10 @@
 import YouTubeEmbed from '../media/YouTubeEmbed';
-import { featuredVideo, videos } from '../../data/videos';
+import { featuredVideo, highlightedVideos, videos, youtubeChannelUrl } from '../../data/videos';
 
-const performanceCards = videos.slice(1, 4);
+const performanceCards = [
+  ...highlightedVideos.filter((video) => video.videoId !== featuredVideo.videoId),
+  ...videos.filter((video) => !video.isHighlight),
+].slice(0, 3);
 
 export default function FeaturedPerformances() {
   return (
@@ -33,9 +36,11 @@ export default function FeaturedPerformances() {
               </div>
               <a
                 className="inline-flex min-h-11 items-center justify-center rounded-lg bg-gradient-to-r from-[#f6b64a] to-[#e93675] px-5 text-sm font-extrabold text-[#18061f] transition hover:-translate-y-0.5"
-                href="/gallery"
+                href={youtubeChannelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Watch More Performances
+                Watch on YouTube
               </a>
             </div>
           </div>

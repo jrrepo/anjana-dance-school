@@ -19,14 +19,14 @@ Use this checklist before the first launch and for major releases.
 - [x] Mobile layout smoke-tested locally.
 - [ ] All page headings and copy reviewed.
 - [ ] Events placeholder reviewed before launch.
-- [ ] Confirm `info@anjanadance.com` is a real monitored inbox.
+- [ ] Confirm `anjanadanceschool@gmail.com` is a real monitored inbox.
 
 ## Media
 
 - [ ] All YouTube embeds load from the live domain.
 - [ ] YouTube videos play on mobile.
 - [ ] Instagram links point to the real ADS profile/posts.
-- [ ] YouTube footer link points to the real ADS channel.
+- [x] YouTube footer link points to the real ADS channel.
 - [ ] Facebook footer link updated or removed.
 - [x] Images checked for obvious awkward crops on homepage mobile smoke test.
 

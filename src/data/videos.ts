@@ -8,26 +8,32 @@ export interface Video {
   title: string;
   videoId: string;
   category: VideoCategory;
+  isHighlight?: boolean;
 }
+
+export const youtubeHandle = '@AnjanaDanceSchool-v3q';
+export const youtubeChannelUrl = 'https://www.youtube.com/@AnjanaDanceSchool-v3q';
 
 export const videos: Video[] = [
   {
-    title: 'ADS Kids 3 Event Performance 1',
+    title: 'ADS Kids Cinematic Event Highlight',
     videoId: 'S4plHTJbhr4',
     category: 'Stage Performances',
+    isHighlight: true,
   },
   {
-    title: 'ADS Kids 3 Event Performance 2',
+    title: 'ADS Kids Event Performance 2',
     videoId: 'sSKj4FmEaUc',
     category: 'Stage Performances',
   },
   {
-    title: 'ADS Kids 3 Competition Feature',
+    title: 'ADS Kids Competition Highlight',
     videoId: '6wdyxtXm6lI',
     category: 'Competitions',
+    isHighlight: true,
   },
   {
-    title: 'ADS Kids 3 Practice Session',
+    title: 'ADS Kids Practice Session',
     videoId: '3MYLOquTazk',
     category: 'Practice Sessions',
   },
@@ -41,3 +47,4 @@ export const videoCategories: VideoCategory[] = [
 ];
 
 export const featuredVideo = videos[0];
+export const highlightedVideos = videos.filter((video) => video.isHighlight);

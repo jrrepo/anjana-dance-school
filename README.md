@@ -178,12 +178,12 @@ This keeps media updates out of layout/component code.
 ## Notes
 
 - The Instagram implementation intentionally does not use the Instagram API, Meta developer setup, or access tokens.
-- The YouTube implementation uses static video IDs and `youtube-nocookie.com` embeds.
+- The YouTube implementation uses the real ADS channel URL, static video IDs, and `youtube-nocookie.com` embeds.
 - Do not add fake address or phone data to schema or contact sections. Only use confirmed business details.
 
 ## Future Enhancements
 
-- Replace placeholder Instagram, YouTube, and Facebook profile URLs.
+- Replace placeholder Instagram and Facebook profile URLs.
 - Add a Cloudflare Pages Function or Worker for server-side contact submissions.
 - Add confirmed class schedules, pricing, and enrollment details.
 - Add real event dates and registration links.

@@ -1,9 +1,9 @@
 import { instagramProfileUrl } from '../../data/instagram';
-import logo from '../../assets/logo/ads-icon-transparent.png';
+import dancerIcon from '../../assets/logo/ads-wordmark-variation-1-original-white.png';
 
 export default function InstagramCTA() {
   return (
-    <section className="relative overflow-hidden py-18 sm:py-24">
+    <section id="instagram" className="relative scroll-mt-24 overflow-hidden py-18 sm:py-24">
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(7,11,33,0.1),rgba(52,16,79,0.5),rgba(7,11,33,0.2))]" />
       <div className="absolute left-[12%] top-16 -z-10 h-56 w-56 rounded-full bg-[#e93675]/18 blur-3xl" />
       <div className="absolute bottom-10 right-[10%] -z-10 h-64 w-64 rounded-full bg-[#f6b64a]/14 blur-3xl" />
@@ -27,11 +27,11 @@ export default function InstagramCTA() {
 
             <div className="grid gap-5 sm:grid-cols-[auto_1fr] sm:items-center lg:block">
               <img
-                className="w-28 rounded-lg drop-shadow-[0_18px_40px_rgba(233,54,117,0.24)] lg:mx-auto lg:mb-6 lg:w-36"
-                src={logo.src}
-                width={logo.width}
-                height={logo.height}
-                alt="Anjana Dance School icon"
+                className="w-32 drop-shadow-[0_18px_40px_rgba(233,54,117,0.28)] lg:mx-auto lg:mb-6 lg:w-40"
+                src={dancerIcon.src}
+                width={dancerIcon.width}
+                height={dancerIcon.height}
+                alt="Colorful Anjana Dance School dancer icon"
               />
               <a
                 className="inline-flex min-h-12 items-center justify-center rounded-lg bg-gradient-to-r from-[#f6b64a] via-[#f27b3e] to-[#e93675] px-6 font-extrabold text-[#18061f] shadow-[0_16px_42px_rgba(246,182,74,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_20px_60px_rgba(233,54,117,0.28)]"

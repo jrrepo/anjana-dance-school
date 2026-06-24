@@ -1,9 +1,10 @@
-import logo from '../../assets/logo/anjana-dance-school-logo-transparent.png';
+import dancerIcon from '../../assets/logo/ads-wordmark-variation-1-original-white.png';
+import { youtubeChannelUrl } from '../../data/videos';
 
 const quickLinks = ['About', 'Classes', 'Gallery', 'Events', 'Contact'];
 const socials = [
   { label: 'Instagram', href: 'https://www.instagram.com/' },
-  { label: 'YouTube', href: 'https://www.youtube.com/' },
+  { label: 'YouTube', href: youtubeChannelUrl },
   { label: 'Facebook', href: 'https://www.facebook.com/' },
 ];
 
@@ -12,8 +13,8 @@ export default function Footer() {
     <footer className="border-t border-[#fff1d6]/14 bg-[linear-gradient(180deg,rgba(7,11,33,0.35),rgba(7,11,33,0.95)),rgba(9,6,28,0.98)]">
       <div className="mx-auto w-[min(1180px,calc(100%-32px))] py-12 sm:py-16">
         <div className="grid gap-8 border-b border-[#fff1d6]/12 pb-9 lg:grid-cols-[1.2fr_0.8fr_0.9fr_0.9fr]">
-          <div>
-            <img className="w-40 rounded-lg drop-shadow-[0_0_24px_rgba(246,182,74,0.18)]" src={logo.src} width={logo.width} height={logo.height} alt="Anjana Dance School logo" />
+          <div className="max-w-sm">
+            <img className="w-48 drop-shadow-[0_0_28px_rgba(246,182,74,0.22)] sm:w-52 lg:w-56" src={dancerIcon.src} width={dancerIcon.width} height={dancerIcon.height} alt="Anjana Dance School dancer icon" />
             <p className="mt-5 max-w-sm text-lg font-semibold text-[#fff8ea]">Express yourself through the art of dance</p>
             <p className="mt-3 max-w-sm text-sm leading-7 text-[#d8cae8]">A premium, performance-focused dance school bringing freestyle and cinematic movement training to Central Florida.</p>
           </div>

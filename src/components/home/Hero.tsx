@@ -1,4 +1,4 @@
-import logo from '../../assets/logo/anjana-dance-school-logo-transparent.png';
+import dancerIcon from '../../assets/logo/ads-wordmark-variation-1-original-white.png';
 import heroImage from '../../assets/hero/IMG-20251018-WA0193.jpg';
 
 export default function Hero() {
@@ -42,11 +42,19 @@ export default function Hero() {
           <div className="absolute -inset-8 rounded-full bg-[radial-gradient(circle,rgba(246,182,74,0.2),rgba(233,54,117,0.12),transparent_64%)] blur-xl" />
           <div className="relative overflow-hidden rounded-lg border border-[#fff1d6]/16 bg-[#070b21]/42 p-3 shadow-[0_24px_80px_rgba(0,0,0,0.38)] backdrop-blur-sm">
             <img className="aspect-[16/10] w-full rounded-md object-cover object-center" src={heroImage.src} width={heroImage.width} height={heroImage.height} alt="Stage performance by Anjana Dance School students" />
+            <div className="pointer-events-none absolute inset-x-3 bottom-3 h-28 rounded-b-md bg-gradient-to-t from-[#070b21]/68 via-[#070b21]/16 to-transparent" />
+            <img
+              className="pointer-events-none absolute bottom-5 right-6 w-28 opacity-55 drop-shadow-[0_14px_34px_rgba(0,0,0,0.5)]"
+              src={dancerIcon.src}
+              width={dancerIcon.width}
+              height={dancerIcon.height}
+              alt=""
+              aria-hidden="true"
+            />
           </div>
-          <img className="absolute -bottom-9 -left-8 w-36 rounded-lg shadow-[0_18px_45px_rgba(0,0,0,0.42)]" src={logo.src} width={logo.width} height={logo.height} alt="Anjana Dance School logo" />
         </div>
 
-        <img className="w-32 rounded-lg shadow-[0_18px_45px_rgba(0,0,0,0.42)] lg:hidden" src={logo.src} width={logo.width} height={logo.height} alt="Anjana Dance School logo" />
+        <img className="w-24 opacity-80 drop-shadow-[0_18px_45px_rgba(0,0,0,0.42)] lg:hidden" src={dancerIcon.src} width={dancerIcon.width} height={dancerIcon.height} alt="Anjana Dance School dancer icon" />
       </div>
     </section>
   );
